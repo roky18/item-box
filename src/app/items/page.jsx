@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getItems() {
-  const res = await fetch("http://localhost:3000/api/items", {
+  const res = await fetch("http://item-box-pearl.vercel.app/api/items", {
     cache: "no-store",
   });
 

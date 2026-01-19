@@ -25,6 +25,16 @@ export default function LoginPage() {
     }
   };
 
+  // This function
+  const handleDemoLogin = () => {
+    setEmail(MOCK_EMAIL);
+    setPassword(MOCK_PASSWORD);
+
+    // direct login
+    Cookies.set("token", "loggedin", { expires: 1 });
+    router.push("/items");
+  };
+
   return (
     <div className="min-h-screen w-11/12 mx-auto flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-base-200 rounded-2xl shadow-2xl p-8 md:p-10">
@@ -75,8 +85,16 @@ export default function LoginPage() {
           </button>
         </form>
 
+        {/* Demo Login Button */}
+        <button
+          onClick={handleDemoLogin}
+          className="w-full py-3 rounded-xl bg-gray-300 text-gray-800 font-semibold text-lg mt-4 hover:bg-gray-400 transition"
+        >
+          Demo Login
+        </button>
+
         <div className="mt-6 text-center text-gray-600 text-sm">
-          Demo login: <br />
+          Demo credentials: <br />
           Email: <span className="font-mono">user@example.com</span> | Password:{" "}
           <span className="font-mono">123456</span>
         </div>

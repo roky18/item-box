@@ -74,7 +74,7 @@ export default function Navbar() {
       </div>
 
       {/* Center links */}
-      <div className="flex-1 justify-center hidden md:flex gap-2">
+      <div className="flex justify-center md:gap-2">
         {centerLinks.map((link) => {
           const isActive = pathname === link.href;
 
