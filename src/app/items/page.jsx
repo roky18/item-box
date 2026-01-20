@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,12 +30,10 @@ export default async function ItemsPage() {
         {items.map((item) => (
           <div key={item._id} className="card bg-base-100 shadow-xl">
             <figure className="p-4">
-              <Image
+              <img
                 src={item.image}
                 alt={item.name}
-                width={300}
-                height={200}
-                className="rounded-xl object-cover"
+                className="w-full h-64 object-cover rounded-lg my-4"
               />
             </figure>
 
